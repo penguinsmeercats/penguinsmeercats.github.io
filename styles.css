@@ -14,7 +14,19 @@ body::after{
     position: absolute;
     z-index: -1;
 }
-header {
+
+.banner{
+    width: 100vw;
+    background-color: white;
+    font-size: 65px;
+}
+
+.banner img{
+    border: black 1px solid;
+    border-radius: 50px;
+}
+
+.header {
     height: 50px;
     width: 100vw;
     background-color: #4CAF50;
