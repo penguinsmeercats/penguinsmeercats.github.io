@@ -4,7 +4,7 @@ body{
 }
 body::after{
     content: "";
-    background-image: url("img/avatar.jpg");
+    background-image: url("img/Avatar.jpg");
     background-size: 50px;
     opacity: 0.1;
     top: 0;
