@@ -23,7 +23,7 @@ body::after{
 
 .banner img{
     border: black 1px solid;
-    border-radius: 50px;
+    border-radius: 30%;
 }
 
 .header {
