@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <style media="screen">
+      *{
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0px;
+      }
+
+      .headerhere {
+        width: 100vw;
+        height: 129px;
+        background: #000;
+      }
+
+      .quizarea {
+        font-size: 32px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .quizprogress {
+        float: right;
+        font-family: "Lucida Console", "Courier New", monospace;
+        border: 1px solid gray;
+        padding: 5px;
+        font-size: 24px;
+      }
+
+      .quiztimer:before {
+        content: "Time: ";
+      }
+
+      .quizprogress:after {
+        clear: right;
+      }
+      .quizscore{
+        text-align: right;
+      }
+      .quiztablediv{
+        column-count: 4;
+        font-size: 16px;
+        padding: 10px;
+      }
+      div.question, div.answer{
+        height: 20px;
+        display: inline-block;
+      }
+      .quiztablediv2{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      .quiztable{
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .quiztable td,.quiztable tr{
+        border: 1px solid black;
+        text-align: center;
+      }
+      .quizinput, .quizstartquiz{
+        height: 36px;
+        width: 150px;
+        border: 1px solid black;
+      }
+      .quizstartquiz{
+        text-align: center;
+        background: green;
+        color: white;
+        cursor: pointer;
+      }
+    </style>
+    <script type="text/javascript" src="/home/victor/Coding/Quiz/quizdata-europe.js"></script>
+
+  </head>
+
+  <body>
+    <div class="headerhere"></div>
+    <div class="quizarea">
+      <div class="quizprogress">
+        <div class="quiztimer">0:00</div>
+        <div class="quizscore">0/0 0%</div>
+      </div>
+      <div class="quizquestion">Can you name...?</div>
+      <div class="quizinputdiv">
+        <input type="text" class="quizinput" style="display: none;" onkeyup="checkAnswers()"/>
+        <div class="quizstartquiz" onclick="startquiz();">PLAY!
+        </div>
+      </div>
+      <div class="quiztablediv">
+        <div class="quiztablediv2">
+
+        </div>
+
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="/home/victor/Coding/Quiz/quizengine.js"></script>
+</html>
