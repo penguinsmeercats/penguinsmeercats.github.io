@@ -20,6 +20,7 @@ body {
 .quizarea {
     font-size: 32px;
     font-family: Arial, Helvetica, sans-serif;
+    width: 100vw;
     padding-top: 10px;
     padding-bottom: 200px;
     background: rgb(127, 191, 127);
