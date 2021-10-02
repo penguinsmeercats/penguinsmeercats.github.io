@@ -3,7 +3,7 @@ var timer = "";
 var answerTDs = [];
 
 function quizClassicOnloadFunction(){
-  let quiztable = '';
+  let quiztable = '<table style="width: 100%;">';
   let questionsarray = [];
   let answersarray = [];
   let quiztimeSecs = quizdata.timeInSecs % 60;
@@ -17,16 +17,18 @@ function quizClassicOnloadFunction(){
   document.querySelector(".quiztimer").innerText = quiztimeMins + ":" + leadingZero(quiztimeSecs);
   document.querySelector(".quiztimer").dataset.secondsRemaining = quizdata.timeInSecs;
   for(i=0; i<quizdata.questionsAnswers.length; i++){
-    let line = '<div class="question" style="width:' + quizcol1width + '%">' + quizdata.questionsAnswers[i][0] + '</div><div class="answer" style="width:' + quizcol2width + '%"></div>';
+    let line = '<tr><td class="question" style="width:' + quizcol1width + '%">' + quizdata.questionsAnswers[i][0] + '</td><td class="answer" style="width:' + quizcol2width + '%"></td></tr>';
     quiztable += line;
-    questionsarray.push(quizdata.questionsAnswers[i][0])
-    answersarray.push(quizdata.questionsAnswers[i][1])
+    questionsarray.push(quizdata.questionsAnswers[i][0]);
+    answersarray.push(quizdata.questionsAnswers[i][1]);
+    let plusone = i + 1;
+    console.log(plusone, quizdata.columns, plusone%quizdata.columns);
   }
   document.querySelector(".quiztablediv").style.columnCount = quizdata.columns;
   //console.log(quiztable, questionsarray, answersarray, quiztimeSecs, quiztimeMins);
-  quiztable += "";
+  quiztable += "</table>";
   document.querySelector(".quiztablediv2").innerHTML = quiztable;
-  answerTDs = document.querySelectorAll(".quiztable td.answer");
+  answerTDs = document.querySelectorAll(".quiztablediv td.answer");
   console.log(answerTDs)
   let answerbank = [];
   for(i=0; i<answersarray.length; i++){
@@ -41,6 +43,7 @@ function quizClassicOnloadFunction(){
 
 function startquiz(){
   document.querySelector(".quizinput").style.display = "inline-block";
+  document.querySelector(".quizendquiz").style.display = "inline-block";
   document.querySelector(".quizstartquiz").style.display = "none";
   document.querySelector(".quizinput").focus();
   starttimer();
