@@ -85,7 +85,7 @@ function checkAnswers(){
       document.querySelector(".quizinput").value = "";
     }
   }
-  let correctguesses = document.querySelectorAll(".quiztable td.answer.correct");
+  let correctguesses = document.querySelectorAll(".quiztablediv td.answer.correct");
   let correctpercentage = ((correctguesses.length / answerTDs.length) * 100);
   correctpercentage = correctpercentage.toFixed(0);
   let newscore = correctguesses.length + "/" + answerTDs.length + " " + correctpercentage + "%";
